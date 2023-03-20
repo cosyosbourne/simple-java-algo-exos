@@ -1,7 +1,8 @@
+import java.util.Arrays;
 import java.util.Scanner;  // Import the Scanner class
 
 public class ExoFrancois {
-        public static void main(String[] args) {
+    public static void main(String[] args) {
 
         /*
 
@@ -186,7 +187,7 @@ public class ExoFrancois {
             }
             */
 
-/*
+            /*
 
         // Exo 10
             Scanner pyramid = new Scanner(System.in);
@@ -207,8 +208,9 @@ public class ExoFrancois {
                 }
                 System.out.println();
             }
-*/
+            */
 
+            /*
         // Exo 11
             Scanner bill = new Scanner(System.in);
 
@@ -246,7 +248,46 @@ public class ExoFrancois {
                     }
                 }
             }
+        */
+
+        /*
+    // Exo 12
+
+        // Définir la liste de températures
+        int[] temperatures = {12, 25, 5, 7, 6, -5};
+
+        // Initialiser la variable pour stocker la température la plus proche de 0°C
+        int closest = temperatures[0];
+
+        // Parcourir la liste de températures
+        for (int i = 1; i < temperatures.length; i++) {
+            // Calculer la différence entre la température actuelle et 0°C
+            int diffCurrent = Math.abs(temperatures[i]);
+            int diffClosest = Math.abs(closest);
+
+            // Vérifier si la température actuelle est plus proche de 0°C que la température la plus proche actuelle
+            if (diffCurrent < diffClosest || (diffCurrent == diffClosest && temperatures[i] < closest)) {
+                closest = temperatures[i];
+            }
         }
+
+        // Afficher la température la plus proche de 0°C
+        System.out.println("La température la plus proche de 0°C est " + closest + "°C.");
+        */
+
+    // Exo 13
+
+        int [] list = {12, 25, 5, 7, 6, -5};
+        int [] chrono = new int [5];
+
+        for (int i = 0; i<5; i++){
+            if (list[i]>list[i+1]){
+                list[i+1]=chrono[i];
+            }
+        }
+        System.out.println(Arrays.toString(chrono));
     }
+}
+
 
 
