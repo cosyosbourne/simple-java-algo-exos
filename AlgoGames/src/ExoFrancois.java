@@ -186,13 +186,14 @@ public class ExoFrancois {
             }
             */
 
+/*
 
         // Exo 10
-            Scanner sc = new Scanner(System.in);
+            Scanner pyramid = new Scanner(System.in);
 
             // Demander à l'utilisateur de saisir un nombre
             System.out.println("Entrez un nombre:");
-            int n = sc.nextInt();
+            int n = pyramid.nextInt();
 
             // Générer une pyramide d'étoiles
             for (int i = 1; i <= n; i++) {
@@ -206,8 +207,45 @@ public class ExoFrancois {
                 }
                 System.out.println();
             }
+*/
 
-            
+        // Exo 11
+            Scanner bill = new Scanner(System.in);
+
+            // Demander à l'utilisateur de saisir un montant
+            System.out.println("Saisissez un montant");
+
+            // Transformation du montant saisi en centimes (*100)
+            double amount = bill.nextDouble();
+            int toCents = (int) (amount * 100);
+            System.out.println(toCents);
+
+            // Création d'un tablea de billets et pièces (en centimes)
+            int [] bills = {50000, 20000, 10000, 5000, 2000, 1000, 500, 200, 100, 50, 20, 10, 5, 2, 1};
+            int[] noteCounter = new int[15];
+
+
+            // Comptage pour chaque valeur du tableau
+            for (int i=0; i<15; i++) {
+                if (toCents>=bills[i]){
+                    if (bills[i]>=500) {
+                        noteCounter[i] = toCents / bills[i];
+                        System.out.println("Billets " + (bills[i] / 100) + "€ : " + noteCounter[i]);
+                        toCents = toCents % bills[i];
+                        System.out.println("Montant restant : " + ((double) toCents / 100) + " €");
+                    } else if (bills[i]>=100) {
+                        noteCounter[i] = toCents / bills[i];
+                        System.out.println("Pièces " + (bills[i] / 100) + "€ : " + noteCounter[i]);
+                        toCents = toCents % bills[i];
+                        System.out.println("Montant restant : " + ((double) toCents / 100) + " €");
+                    } else {
+                        noteCounter[i] = toCents / bills[i];
+                        System.out.println("Pièce " + bills[i] + " cts : " + noteCounter[i]);
+                        toCents = toCents % bills[i];
+                        System.out.println("Montant restant : " + toCents + " centimes");
+                    }
+                }
+            }
         }
     }
 
